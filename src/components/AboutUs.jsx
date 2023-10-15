@@ -1,8 +1,12 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 const AboutUs = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
   return (
-    <section id="about" className="bg-white py-16">
+    <section ref={ref} id="about" className="bg-white py-16">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div>
@@ -22,7 +26,7 @@ const AboutUs = () => {
               everyone.
             </p>
           </div>
-          <div className="animated-image">
+          <div className={`${inView ? "animated-image" : ""}`}>
             <img
               src="https://plus.unsplash.com/premium_photo-1682435561654-20d84cef00eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1618&q=80"
               alt="About Us"

@@ -1,12 +1,25 @@
 import React from "react";
 import "../Animation.css";
+import { useInView } from "react-intersection-observer";
 const Banner = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
   return (
-    <div className="container mx-auto w-full  text-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInLeft ">
+    <div ref={ref} className="container mx-auto w-full  text-center">
+      <h1
+        className={`text-4xl md:text-6xl font-bold mb-4 ${
+          inView ? "animate-fadeInLeft" : ""
+        }`}
+      >
         Discover the Perfect Shoes
       </h1>
-      <p className="text-lg md:text-xl mb-8 animate-fadeInRight">
+      <p
+        className={`text-lg md:text-xl mb-8   ${
+          inView ? "animate-fadeInRight" : ""
+        }`}
+      >
         Quality shoes for every occasion.
       </p>
       <a

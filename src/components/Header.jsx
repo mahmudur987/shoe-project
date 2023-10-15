@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "./Banner";
 import "../Animation.css";
+import { useInView } from "react-intersection-observer";
 const Header = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
-    <header className=" container mx-auto  bg-gray-900 text-white">
-      <div className="p-4 animated-element">
+    <header ref={ref} className=" container mx-auto  bg-gray-900 text-white">
+      <div className={`p-4 ${inView ? "animated-element" : ""}`}>
         <div className="flex justify-between items-center">
           {/* Company Logo */}
           <div className="text-3xl font-bold">
