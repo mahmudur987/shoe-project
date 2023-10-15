@@ -1,0 +1,142 @@
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%); /* Start position off-screen to the right */
+  }
+  100% {
+    transform: translateX(0); /* End position, no translation */
+  }
+}
+
+/* Apply the animation to elements with a class */
+.animated-element {
+  animation: slideRightToLeft 3s linear; /* 3s duration, linear timing function */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 5s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    color: red;
+    transform: translateX(-100%); /* Start position off-screen to the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End position, no translation */
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 3s ease-out;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start position off-screen to the right */
+    color: blueviolet;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End position, no translation */
+  }
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 4s ease-out;
+}
+
+/* Define the keyframes animation */
+@keyframes slideFromTop {
+  0% {
+    transform: translateY(-100%); /* Start position above the viewport */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to an element */
+.animated-background {
+  animation: slideFromTop 1s ease-out; /* 1-second delay */
+}
+
+/* Define the keyframes animation */
+@keyframes colorChange {
+  0% {
+    color: black; /* Start with black color */
+  }
+  50% {
+    color: red; /* Midpoint with red color */
+  }
+  100% {
+    color: black; /* End back to black color */
+  }
+}
+
+.animated-text1 {
+  animation: colorChange 3s infinite linear;
+}
+@keyframes colorChange2 {
+  0% {
+    color: blue; /* Start with black color */
+  }
+  50% {
+    color: yellowgreen; /* Midpoint with red color */
+  }
+  100% {
+    color: blue; /* End back to black color */
+  }
+}
+
+.animated-text2 {
+  animation: colorChange2 3s infinite linear;
+}
+
+/* Define the keyframes animation */
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%); /* Start position off-screen to the right */
+  }
+  100% {
+    transform: translateX(0); /* End position, no translation */
+  }
+}
+
+/* Apply the animation to an element with an image */
+.animated-image {
+  animation: slideFromRight 3s linear; /* 3s duration, linear timing function */
+}
+@keyframes backgroundChange {
+  0% {
+    background-position: -100% 0;
+    color: yellowgreen; /* Start position off-screen to the left */
+  }
+  100% {
+    background-position: 100% 0;
+    color: aquamarine;
+    /* End position off-screen to the right */
+  }
+}
+
+/* Apply the animation to an element */
+.animated-bg {
+  background: linear-gradient(
+    to right,
+    red,
+    blue
+  ); /* Specify the starting and ending colors */
+  background-size: 200% 100%;
+  animation: backgroundChange 3s infinite linear; /* 3s duration, infinite loop, linear timing function */
+}
